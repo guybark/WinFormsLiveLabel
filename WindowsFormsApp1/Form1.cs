@@ -17,8 +17,13 @@ namespace WindowsFormsApp1
             // in the element being added to the tree as required, but if the event 
             // is raised immediately after doing that, the full required effect of 
             // setting the text has not yet occurred. The most straightforward way 
-            // to account for that is to set some empty text on the Label before 
+            // to account for that is to set some whitespace text on the Label before 
             // the string to be announced is set on it later.
+
+            // Note that a side effect of this is that a screen reader can navigate 
+            // to the label now, and may announce "Space". This isn't ideal, but 
+            // acceptable given the overall benefits of having the Label's helpful
+            // text announced when the text is set on the Label.
             labelLiveStatus.Text = " ";
         }
 
